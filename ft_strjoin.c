@@ -18,7 +18,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s2_len;
 	char	*result;
 	size_t	i;
-	size_t	j;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -27,20 +26,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result = (char *)malloc((s1_len + s2_len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
+	//ft_strlcpy(result, s1, s1_len + 1);
+	//ft_strlcat(result, s2, s1_len + s2_len + 1);
 	i = 0;
-	while (s1[i])
+	while (*s1)
 	{
-		result[i] = s1[i];
-		i++;
+		result[i++] = s1;
+		s1++;
 	}
-	j = 0;
-	while (s2[j])
+	while (*s2)
 	{
-		result[i] = s2[j];
-		i++;
-		j++;
+		result[i++] = *s2;
+		s2++;
 	}
 	result[i] = '\0';
+	return (result);
 	return (result);
 }
 /*
