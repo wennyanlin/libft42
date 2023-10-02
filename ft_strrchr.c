@@ -6,41 +6,55 @@
 /*   By: wlin <wlin@student.42barcelona.>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:59:51 by wlin              #+#    #+#             */
-/*   Updated: 2023/09/15 15:59:57 by wlin             ###   ########.fr       */
+/*   Updated: 2023/10/02 15:37:46 by wlin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
-	int		lasti;
-	char	foundchar;
+	int		last_i;
+	char	target_char;
 
-	foundchar = (char)c;
+	target_char = (char)c;
 	i = 0;
-	lasti = 0;
+	last_i = -1;
 	while (s[i] != '\0')
 	{
-		if (s[i] == foundchar)
+		if (s[i] == target_char)
 		{
-			lasti = i;
+			last_i = i;
 		}
 		i++;
 	}
-	return ((char *)&s[lasti]);
+	if (target_char == '\0')
+		return ((char *)&s[i]);
+	else if (last_i >= 0)
+		return ((char *)&s[last_i]);
+	else
+		return (NULL);
 }
-
+/*
+----
+strrchr searches for the last occurrence of target char in s.
+-> it iterates through the s and return a pointer to the last occurrance
+   of the target char.
+-> if the target char is not found, it returns 'NULL'.
+-> if the target char is the null terminator, it returns a pointer to the end.
+----*//*
+#include <stdio.h>
 int	main(void)
 {
 	const char	*s;
 	int			c;
 	char		*result;
 
-	*s = "hello";
+	s = "hello";
 	c = 108;
-	*result = strrchr(s, c);
-	printf("%c", *result);
+	result = strrchr(s, c);
+	printf("%s", result);
 	return (0);
-}
+}*/

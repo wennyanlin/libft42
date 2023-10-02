@@ -6,7 +6,7 @@
 /*   By: wlin <wlin@student.42barcelona.>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 20:02:02 by wlin              #+#    #+#             */
-/*   Updated: 2023/09/16 21:19:30 by wlin             ###   ########.fr       */
+/*   Updated: 2023/10/02 15:48:53 by wlin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 /*
+----
+strncmp compares the first n char of s1 and s2. It uses ASCII values,
+stops after n char or at the end, then return the ASCII defference or 0.
+-> s1[n] = s2[n] => '0'
+-> s1[n] < s2[n] => negative value
+-> s1[n] > s2[n] => positive value
+----*//*
+#include <stdio.h>
 int	main()
 {
 	char *s1 = "Hello";

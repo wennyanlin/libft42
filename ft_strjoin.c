@@ -6,7 +6,7 @@
 /*   By: wlin <wlin@student.42barcelona.>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:37:20 by wlin              #+#    #+#             */
-/*   Updated: 2023/09/21 16:55:59 by wlin             ###   ########.fr       */
+/*   Updated: 2023/09/21 18:16:06 by wlin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result = (char *)malloc((s1_len + s2_len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
-	//ft_strlcpy(result, s1, s1_len + 1);
-	//ft_strlcat(result, s2, s1_len + s2_len + 1);
 	i = 0;
 	while (*s1)
 	{
-		result[i++] = s1;
+		result[i++] = *s1;
 		s1++;
 	}
 	while (*s2)
@@ -40,7 +38,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s2++;
 	}
 	result[i] = '\0';
-	return (result);
 	return (result);
 }
 /*
