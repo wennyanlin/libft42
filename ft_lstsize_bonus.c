@@ -6,7 +6,7 @@
 /*   By: wlin <wlin@student.42barcelona.>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 14:39:09 by wlin              #+#    #+#             */
-/*   Updated: 2023/09/27 15:20:47 by wlin             ###   ########.fr       */
+/*   Updated: 2023/09/29 17:12:39 by wlin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_lstsize(t_list *lst)
 
 	i = 0;
 	if (!lst)
-		return (NULL);
+		return (0);
 	while (lst)
 	{
 		i++;

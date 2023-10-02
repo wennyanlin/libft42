@@ -6,10 +6,10 @@
 /*   By: wlin <wlin@student.42barcelona.>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 23:37:38 by wlin              #+#    #+#             */
-/*   Updated: 2023/09/18 00:43:04 by wlin             ###   ########.fr       */
+/*   Updated: 2023/09/18 12:19:57 by wlin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
